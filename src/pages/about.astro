@@ -1,0 +1,122 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="About" description="Learn about Chris Randall - composer and sound designer for film, TV, and advertising.">
+  <div class="container">
+    <div class="about-layout">
+      <aside class="about-image">
+        <div class="image-placeholder"></div>
+      </aside>
+
+      <article class="about-content">
+        <h1>About</h1>
+
+        <p>
+          [Your bio goes here. Write about your background, experience, and approach to
+          creating music for picture.]
+        </p>
+
+        <p>
+          [Mention notable projects, clients, or placements. Describe your style and
+          what makes your work unique.]
+        </p>
+
+        <p>
+          [Include any relevant education, training, or career highlights.]
+        </p>
+
+        <section class="credits">
+          <h2>Selected Credits</h2>
+          <ul>
+            <li>Project Name - Role (Year)</li>
+            <li>Project Name - Role (Year)</li>
+            <li>Project Name - Role (Year)</li>
+            <li>Project Name - Role (Year)</li>
+          </ul>
+        </section>
+
+        <section class="gear">
+          <h2>Studio</h2>
+          <p class="text-muted">
+            [Optional: Describe your studio setup or gear if relevant to sync clients.]
+          </p>
+        </section>
+      </article>
+    </div>
+  </div>
+</BaseLayout>
+
+<style>
+  .about-layout {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 4rem;
+    align-items: start;
+  }
+
+  .about-image {
+    position: sticky;
+    top: 100px;
+  }
+
+  .image-placeholder {
+    aspect-ratio: 1;
+    background-color: var(--color-bg-secondary);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .image-placeholder::after {
+    content: 'Photo';
+    color: var(--color-text-muted);
+    font-size: 0.875rem;
+  }
+
+  .about-content h1 {
+    margin-bottom: 1.5rem;
+  }
+
+  .about-content p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+  }
+
+  .credits,
+  .gear {
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--color-border);
+  }
+
+  .credits h2,
+  .gear h2 {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+  }
+
+  .credits ul {
+    list-style: none;
+  }
+
+  .credits li {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid var(--color-border);
+    color: var(--color-text-muted);
+  }
+
+  @media (max-width: 768px) {
+    .about-layout {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+
+    .about-image {
+      position: static;
+      max-width: 250px;
+    }
+  }
+</style>

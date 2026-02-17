@@ -1,0 +1,156 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Home">
+  <section class="hero">
+    <div class="container">
+      <h1>Music for Picture</h1>
+      <p class="tagline">
+        Composer and sound designer crafting music for film, television, and advertising.
+      </p>
+      <div class="cta-links">
+        <a href="/music" class="cta-primary">Listen</a>
+        <a href="/contact" class="cta-secondary">Get in Touch</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="featured">
+    <div class="container">
+      <h2>Recent Work</h2>
+      <p class="text-muted">Selected placements and compositions</p>
+
+      <div class="featured-grid">
+        <div class="featured-item">
+          <div class="placeholder-embed"></div>
+          <h3>Project Title</h3>
+          <p class="text-muted">Category / Year</p>
+        </div>
+        <div class="featured-item">
+          <div class="placeholder-embed"></div>
+          <h3>Project Title</h3>
+          <p class="text-muted">Category / Year</p>
+        </div>
+        <div class="featured-item">
+          <div class="placeholder-embed"></div>
+          <h3>Project Title</h3>
+          <p class="text-muted">Category / Year</p>
+        </div>
+      </div>
+
+      <div class="view-all">
+        <a href="/music">View Full Catalog &rarr;</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .hero {
+    text-align: center;
+    padding: 4rem 0 6rem;
+  }
+
+  .hero h1 {
+    font-size: 3.5rem;
+    font-weight: 300;
+    letter-spacing: -0.03em;
+    margin-bottom: 1rem;
+  }
+
+  .tagline {
+    font-size: 1.25rem;
+    color: var(--color-text-muted);
+    max-width: 500px;
+    margin: 0 auto 2rem;
+  }
+
+  .cta-links {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+  }
+
+  .cta-primary,
+  .cta-secondary {
+    padding: 0.75rem 2rem;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .cta-primary {
+    background-color: var(--color-accent);
+    color: white;
+  }
+
+  .cta-primary:hover {
+    background-color: #2563eb;
+    color: white;
+  }
+
+  .cta-secondary {
+    border: 1px solid var(--color-border);
+  }
+
+  .cta-secondary:hover {
+    border-color: var(--color-text-muted);
+  }
+
+  .featured {
+    padding: 4rem 0;
+  }
+
+  .featured h2 {
+    margin-bottom: 0.5rem;
+  }
+
+  .featured-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+  }
+
+  .featured-item h3 {
+    margin-top: 1rem;
+    font-size: 1.1rem;
+  }
+
+  .placeholder-embed {
+    background-color: var(--color-bg-secondary);
+    border-radius: 8px;
+    height: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .placeholder-embed::after {
+    content: 'SoundCloud Embed';
+    color: var(--color-text-muted);
+    font-size: 0.875rem;
+  }
+
+  .view-all {
+    margin-top: 3rem;
+    text-align: center;
+  }
+
+  .view-all a {
+    color: var(--color-accent);
+  }
+
+  @media (max-width: 600px) {
+    .hero h1 {
+      font-size: 2.5rem;
+    }
+
+    .cta-links {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+</style>
