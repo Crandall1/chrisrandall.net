@@ -10,7 +10,10 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
     <div class="playlist-grid">
       <div class="playlist-item">
+        <h2>Micronaut - Unceremonious</h2>
+        <p class="playlist-desc">Dark, moody modern electronica</p>
         <iframe id="disco-playlist-27593591" name="disco-playlist-27593591" allowfullscreen frameborder="0" class="disco-embed" src="https://chrisrandall.disco.ac/e/p/27593591?download=false&s=USiRfWxyTtL9euA1Y68ebEOoleA%3AlJZD1cGw&artwork=true&color=%234E98FF&theme=dark" width="480" height="395"></iframe>
+        <a href="https://micronaut.bandcamp.com/album/unceremonious" target="_blank" rel="noopener" class="purchase-link">Purchase Album</a>
       </div>
     </div>
   </div>
@@ -34,7 +37,31 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
   .playlist-item {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .playlist-item h2 {
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.25rem;
+  }
+
+  .playlist-desc {
+    color: var(--color-text-muted);
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+  }
+
+  .purchase-link {
+    margin-top: 0.75rem;
+    color: var(--color-accent);
+    font-size: 0.85rem;
+  }
+
+  .purchase-link:hover {
+    text-decoration: underline;
   }
 
   .disco-embed {
