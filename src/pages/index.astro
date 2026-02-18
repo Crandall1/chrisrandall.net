@@ -18,24 +18,18 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
   <section class="featured">
     <div class="container">
-      <h2>Recent Work</h2>
-      <p class="text-muted">Selected placements and compositions</p>
+      <h2 class="section-title">Recent Work</h2>
+      <p class="text-muted section-subtitle">Selected compositions</p>
 
       <div class="featured-grid">
         <div class="featured-item">
-          <div class="placeholder-embed"></div>
-          <h3>Project Title</h3>
-          <p class="text-muted">Category / Year</p>
+          <iframe id="disco-track-191152465" name="disco-track-191152465" allowfullscreen frameborder="0" class="disco-embed" src="https://chrisrandall.disco.ac/e/t/191152465?s=9R5lekryJ3f9vD3HDKFp_0HULM8%3AIND7WiDN&artwork=true&color=%234E98FF&theme=dark" width="480" height="235"></iframe>
         </div>
         <div class="featured-item">
-          <div class="placeholder-embed"></div>
-          <h3>Project Title</h3>
-          <p class="text-muted">Category / Year</p>
+          <iframe id="disco-track-191152463" name="disco-track-191152463" allowfullscreen frameborder="0" class="disco-embed" src="https://chrisrandall.disco.ac/e/t/191152463?s=09X95Cwrx0pxvFven7ZNfr_OVOU%3Au2S2ZeNl&artwork=true&color=%234E98FF&theme=dark" width="480" height="235"></iframe>
         </div>
         <div class="featured-item">
-          <div class="placeholder-embed"></div>
-          <h3>Project Title</h3>
-          <p class="text-muted">Category / Year</p>
+          <iframe id="disco-track-191152141" name="disco-track-191152141" allowfullscreen frameborder="0" class="disco-embed" src="https://chrisrandall.disco.ac/e/t/191152141?s=_e6WrsbKNJ7Fn45aPtVZ2dPlvPM%3AKG5lVXR3&artwork=true&color=%234E98FF&theme=dark" width="480" height="235"></iframe>
         </div>
       </div>
 
@@ -103,35 +97,31 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     padding: 4rem 0;
   }
 
+  .section-title,
+  .section-subtitle {
+    text-align: center;
+  }
+
   .featured h2 {
     margin-bottom: 0.5rem;
   }
 
   .featured-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     gap: 2rem;
     margin-top: 2rem;
   }
 
-  .featured-item h3 {
-    margin-top: 1rem;
-    font-size: 1.1rem;
-  }
-
-  .placeholder-embed {
-    background-color: var(--color-bg-secondary);
-    border-radius: 8px;
-    height: 180px;
+  .featured-item {
     display: flex;
-    align-items: center;
     justify-content: center;
   }
 
-  .placeholder-embed::after {
-    content: 'SoundCloud Embed';
-    color: var(--color-text-muted);
-    font-size: 0.875rem;
+  .disco-embed {
+    max-width: 100%;
+    border-radius: 8px;
   }
 
   .view-all {
