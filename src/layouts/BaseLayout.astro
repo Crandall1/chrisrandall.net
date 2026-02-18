@@ -5,9 +5,44 @@ import '../styles/global.css';
 interface Props {
   title: string;
   description?: string;
+  image?: string;
 }
 
-const { title, description = 'Music for film, TV, and advertising by Chris Randall' } = Astro.props;
+const {
+  title,
+  description = 'Music for film, TV, and advertising by Chris Randall',
+  image = '/banner.png'
+} = Astro.props;
+
+const siteUrl = 'https://chrisrandall.net';
+const fullTitle = `${title} | Chris Randall`;
+const canonicalUrl = new URL(Astro.url.pathname, siteUrl).toString();
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "MusicGroup",
+  "name": "Chris Randall",
+  "url": siteUrl,
+  "image": `${siteUrl}/favicon.png`,
+  "description": "Composer, recording artist, and music technology entrepreneur. Former frontman of Sister Machine Gun. Co-founder of Audio Damage, Inc.",
+  "genre": ["Electronic", "Industrial", "Ambient", "Film Score"],
+  "sameAs": [
+    "https://www.instagram.com/chris.randall/",
+    "https://bsky.app/profile/chrisrandall.net",
+    "https://www.youtube.com/@ChrisRandallMusic",
+    "https://chrisrandall.bandcamp.com",
+    "https://micronaut.bandcamp.com",
+    "https://www.audiodamage.com"
+  ],
+  "member": {
+    "@type": "Person",
+    "name": "Chris Randall",
+    "birthDate": "1968",
+    "birthPlace": "Honolulu, Hawaii",
+    "jobTitle": "Composer",
+    "knowsAbout": ["Music Composition", "Sound Design", "Music Production", "Synthesizers"]
+  }
+};
 ---
 
 <!DOCTYPE html>
@@ -18,7 +53,27 @@ const { title, description = 'Music for film, TV, and advertising by Chris Randa
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content={description} />
     <meta name="generator" content={Astro.generator} />
-    <title>{title} | Chris Randall</title>
+    <title>{fullTitle}</title>
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href={canonicalUrl} />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:title" content={fullTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={`${siteUrl}${image}`} />
+    <meta property="og:site_name" content="Chris Randall" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={fullTitle} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={`${siteUrl}${image}`} />
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
   </head>
   <body>
     <Navigation />
