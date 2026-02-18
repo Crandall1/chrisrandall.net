@@ -16,10 +16,6 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     </div>
   </section>
 
-  <div class="hero-banner">
-    <img src="/banner.png" alt="" />
-  </div>
-
   <section class="featured">
     <div class="container">
       <h2 class="section-title">Recent Work</h2>
@@ -48,6 +44,9 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   .hero {
     text-align: center;
     padding: 4rem 0 6rem;
+    background-image: url('/banner.png');
+    background-size: cover;
+    background-position: center;
   }
 
   .hero h1 {
@@ -95,17 +94,6 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
   .cta-secondary:hover {
     border-color: var(--color-text-muted);
-  }
-
-  .hero-banner {
-    width: 100%;
-    margin-bottom: 2rem;
-  }
-
-  .hero-banner img {
-    width: 100%;
-    height: auto;
-    display: block;
   }
 
   .featured {
