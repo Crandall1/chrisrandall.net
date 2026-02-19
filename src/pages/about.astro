@@ -28,6 +28,14 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         <a href="https://en.wikipedia.org/wiki/Chris_Randall_(musician)" target="_blank" rel="noopener">Wikipedia</a>
         <a href="https://www.discogs.com/artist/79640-Chris-Randall" target="_blank" rel="noopener">Discogs</a>
       </div>
+      <div class="bandcamp-section">
+        <h3>On Bandcamp</h3>
+        <div class="reference-links">
+          <a href="https://chrisrandall.bandcamp.com" target="_blank" rel="noopener">Chris Randall</a>
+          <a href="https://micronaut.bandcamp.com" target="_blank" rel="noopener">Micronaut</a>
+          <a href="https://rt60.bandcamp.com" target="_blank" rel="noopener">RT60</a>
+        </div>
+      </div>
     </header>
 
     <section class="credits-section">
@@ -64,12 +72,12 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     <section class="credits-section">
       <h2>Music For Motion Pictures</h2>
       <ul class="credits-list">
-        <li><a href="https://www.imdb.com/title/tt0117571/" target="_blank" rel="noopener">Scream (1996)</a></li>
-        <li><a href="https://www.imdb.com/title/tt0110024/" target="_blank" rel="noopener">Hideaway (1995)</a></li>
-        <li><a href="https://www.imdb.com/title/tt0112667/" target="_blank" rel="noopener">Criminal Hearts (1995)</a></li>
-        <li><a href="https://www.imdb.com/title/tt0115734/" target="_blank" rel="noopener">Boys Club (1996)</a></li>
-        <li><a href="https://www.imdb.com/title/tt0119784/" target="_blank" rel="noopener">Stephen King's Night Flier (1997)</a></li>
-        <li><a href="https://www.imdb.com/title/tt0118926/" target="_blank" rel="noopener">Dangerous Ground (1997)</a></li>
+        <li><a href="https://www.imdb.com/title/tt0117571/" target="_blank" rel="noopener">Scream</a></li>
+        <li><a href="https://www.imdb.com/title/tt0110024/" target="_blank" rel="noopener">Hideaway</a></li>
+        <li><a href="https://www.imdb.com/title/tt0112667/" target="_blank" rel="noopener">Criminal Hearts</a></li>
+        <li><a href="https://www.imdb.com/title/tt0115734/" target="_blank" rel="noopener">Boys Club</a></li>
+        <li><a href="https://www.imdb.com/title/tt0119784/" target="_blank" rel="noopener">Stephen King's Night Flier</a></li>
+        <li><a href="https://www.imdb.com/title/tt0118926/" target="_blank" rel="noopener">Dangerous Ground</a></li>
       </ul>
     </section>
 
@@ -79,14 +87,14 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       <div class="credit-group">
         <h3>As Sister Machine Gun</h3>
         <ul>
-          <li>Sins of the Flesh (1992)</li>
-          <li>The Torture Technique (1994)</li>
-          <li>Burn (1995)</li>
-          <li>Metropolis (1997)</li>
-          <li>[R]evolution (1999)</li>
-          <li>6.0 (2000)</li>
-          <li>Influence (2003)</li>
-          <li>The Future Unformed (2015)</li>
+          <li>Sins of the Flesh</li>
+          <li>The Torture Technique</li>
+          <li>Burn</li>
+          <li>Metropolis</li>
+          <li>[R]evolution</li>
+          <li>6.0</li>
+          <li>Influence</li>
+          <li>The Future Unformed</li>
         </ul>
       </div>
 
@@ -195,6 +203,18 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
   .reference-links a:hover {
     text-decoration: underline;
+  }
+
+  .bandcamp-section {
+    margin-top: 1.5rem;
+  }
+
+  .bandcamp-section h3 {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--color-text-muted);
+    margin-bottom: 0.5rem;
   }
 
   .social-icons a:hover {
